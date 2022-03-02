@@ -11,7 +11,7 @@ pub struct Row {
     pub amount: Amount
 }
 
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, PartialEq)]
 pub enum Type {
     Deposit,
     Withdrawal,

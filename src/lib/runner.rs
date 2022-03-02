@@ -3,10 +3,8 @@ use crate::output_types::{Output, OutputRow};
 use std::collections::HashMap;
 
 
-#[derive(Debug)]
 pub struct Runner(HashMap<u16, Account>);
 
-#[derive(Debug)]
 struct Account {
     available: f64,
     held: f64,
@@ -14,7 +12,6 @@ struct Account {
     transactions: HashMap<u32, Transaction>
 }
 
-#[derive(Debug)]
 struct Transaction {
     tx_types: Vec<Type>,
     amount: f64

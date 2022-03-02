@@ -43,4 +43,5 @@ Output format is:
 - Unit and Integration tests are missing.
 - Async the runner
 - CI/CD is missing
+- Logging. There's a lot of soft failures happening unreported.
  

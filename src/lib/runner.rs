@@ -34,6 +34,10 @@ impl Runner {
                 transactions: HashMap::new()
             });
         }
+        let locked = hashmap[&client].locked;
+        if locked {
+            return;
+        }
         let tx = row.tx;
         // Set up empty transaction if transaction doesn't exist.
         if !hashmap[&client].transactions.contains_key(&tx){
@@ -63,9 +67,11 @@ impl Runner {
             },
             Type::Withdrawal => {
                 if let Amount::Some(amount) = row.amount {
-                    account.available = available - amount;
-                    transaction.tx_types.push(Type::Deposit);
-                    transaction.amount = amount;
+                    if available > amount {
+                        account.available = available - amount;
+                        transaction.tx_types.push(Type::Deposit);
+                        transaction.amount = amount;
+                    }
                 } else {
                     panic!("Withdrawal without amount")
                 }

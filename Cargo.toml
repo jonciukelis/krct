@@ -1,0 +1,20 @@
+[package]
+name = "large_squid"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "large_squidlib"
+path = "src/lib/lib.rs"
+
+[[bin]]
+name = "large_squid"
+path = "src/bin/main.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+csv = "1.1.6"
+serde = {version = "1.0.136", features = ["derive"]}
+
+[dev-dependencies]

@@ -33,6 +33,14 @@ Output format is:
     ```
     $ cargo run -- <filename.csv>
     ```
+- Tests:
+    ```
+    $ cargo test
+    ```
+- Coverage:
+    ```
+    $ cargo tarpaulin
+    ```
 - Linting:
     ```
     $ cargo clippy
@@ -40,8 +48,7 @@ Output format is:
 
 ## To get to production
 
-- Unit and Integration tests are missing.
-- Async the runner
-- CI/CD is missing
+- Need to Async the runner.
 - Logging. There's a lot of soft failures happening unreported.
- 
+- Some CI/CD is missing.
+- Some Unit and Integration tests are missing.

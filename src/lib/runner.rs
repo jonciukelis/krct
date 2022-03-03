@@ -67,7 +67,7 @@ impl Runner {
             },
             Type::Withdrawal => {
                 if let Amount::Some(amount) = row.amount {
-                    if available > amount {
+                    if available >= amount {
                         account.available = available - amount;
                         transaction.tx_types.push(Type::Deposit);
                         transaction.amount = amount;
